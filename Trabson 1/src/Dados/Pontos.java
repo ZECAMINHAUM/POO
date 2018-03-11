@@ -11,37 +11,36 @@ import javax.swing.JOptionPane;
  *
  * @author Lucas
  */
-public class Pontos extends Circulo{
+public class Pontos {
     
-    double raio;
-   
+    private double x;
+    private double y;
+    private String Tdst = "Distancia";
     
-    public void distancia (double x1, double y1, double x2, double y2, double raio) {
-		double resu, varea, vperimetro  ;
-		
-		//chamando calculo de area
-		varea = area(raio);
-		
-		//chamando calculo de perimetro
-		vperimetro = perimetro(raio);
-		
-		x1 = x1 - x2;
-		y1 = y1 - y2;
-		resu = Math.pow(x1, 2) + Math.pow(y1, 2);
-		resu = Math.sqrt(resu);
-		
-		if(resu > raio) {
-		JOptionPane.showMessageDialog(null, "Area: "+ varea + "\n" + 
-									"Perimetro: " + vperimetro + "\n" +
-									"A distancia é de: " + resu + "\n" +
-									"O ponto B está fora do circulo");
-		}else {
-			JOptionPane.showMessageDialog(null, "Area: "+ varea + "\n" + 
-										"Perimetro: " + vperimetro + "\n" +
-										"A distancia é de: " + resu + "\n" +
-										"O ponto B está dentro do circulo");
-		}
-	}
+    public void setpontoX(double x){
+        this.x = x;
+    }
+    
+    public double getpontoX(double x){
+        return this.x;
+    }
     
     
+    public void setpontoY(double y){
+        this.y = y;
+    }
+    
+    public double getpontoY(double y){
+        return this.y;
+    }
+    
+    
+    public double distancia (Pontos p1, Pontos p2) {
+        Double resu;
+                
+        resu = Math.sqrt(Math.pow((p1.x - p2.x),2) + Math.pow((p1.y - p2.y), 2));
+        JOptionPane.showMessageDialog(null,resu, Tdst, JOptionPane.INFORMATION_MESSAGE);
+        
+        return resu;
+    }
 }
