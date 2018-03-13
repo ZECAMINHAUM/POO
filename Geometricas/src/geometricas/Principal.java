@@ -6,6 +6,7 @@
 package geometricas;
 
 import Dados.Circulo;
+import javafx.geometry.Orientation;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,39 +17,33 @@ import javax.swing.JOptionPane;
  */
 public class Principal extends JFrame{
    
-    JButton btcirculo, btquadrado, bttriangulo, btretangulo;
+    JButton bt_circulo, bt_quadrado, bt_triangulo, bt_retangulo;
     
     public Principal(){
+        
+        setTitle("Formas Geometricas");
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
+        //Criando
+        bt_circulo = new JButton("Circulo");
+        bt_quadrado = new JButton("Quadrado");
+        bt_retangulo = new JButton("Retangulo");
+        bt_triangulo = new JButton("Triangulo");
+        
+        //adicionando
+        getContentPane().add(bt_circulo);
+        getContentPane().add(bt_quadrado);
+        getContentPane().add(bt_retangulo);
+        getContentPane().add(bt_triangulo);
+        
+        
     
         
     }
     
     public static void main (String[] args){
         
-        
-        
-        Circulo circulo = new Circulo();
-        String op = null;
-        
-        op = JOptionPane.showInputDialog("Opções: " + "\n" + "Circulo" + "\n" + "Retangulo" + "\n" + "Quadrado" + "\n" +"Triangulo");
-        if(op.equals("Circulo") || op.equals("circulo")){
-        
-            //recebendo valores do circulo
-            circulo.setRaio(Double.parseDouble(JOptionPane.showInputDialog("Digite o raio do Circulo")));
-            circulo.setCx(Double.parseDouble(JOptionPane.showInputDialog("Digite o x do primeiro ponto do Circulo")));
-            circulo.setCy(Double.parseDouble(JOptionPane.showInputDialog("DIgite o Y do ponto do Circulo")));
-
-        }
-        if(op.equals("Rentangulo") || op.equals("retangulo")){
-            //recebendo valores do retangulo
-            
-        }
-        
-        
-        
-      
-        
- 
+        new Principal().setVisible(true);
         
     }
     
