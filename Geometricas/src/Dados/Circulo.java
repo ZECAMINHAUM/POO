@@ -13,26 +13,8 @@ import javax.swing.JOptionPane;
  */
 public class Circulo {
     
-    private double cx;
-    private double cy;
     private double raio;
-    private String Tperimetro = "Area e Perimetro";
-
-    public double getCx() {
-        return cx;
-    }
-
-    public void setCx(double cx) {
-        this.cx = cx;
-    }
-
-    public double getCy() {
-        return cy;
-    }
-
-    public void setCy(double cy) {
-        this.cy = cy;
-    }
+    private final String Tperimetro = "Area e Perimetro";
 
     public double getRaio() {
         return raio;

@@ -5,19 +5,23 @@
  */
 package geometricas;
 
-import Dados.Circulo;
-import javafx.geometry.Orientation;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author Lucas
  */
-public class Principal extends JFrame{
+public class Principal extends JFrame {
    
-    JButton bt_circulo, bt_quadrado, bt_triangulo, bt_retangulo;
+    private JButton bt_circulo;
+    private JButton bt_quadrado;
+    private JButton bt_triangulo;
+    private JButton bt_retangulo;
+    private ButtonHandler handler;
     
     public Principal(){
         
@@ -27,14 +31,20 @@ public class Principal extends JFrame{
         bt_quadrado = new JButton("Quadrado");
         bt_retangulo = new JButton("Retangulo");
         bt_triangulo = new JButton("Triangulo");
-         
-        //adicionando
-        getContentPane().add(bt_circulo);
-        getContentPane().add(bt_quadrado);
-        getContentPane().add(bt_retangulo);
-        getContentPane().add(bt_triangulo);
+        handler = new ButtonHandler(bt_circulo, bt_quadrado, bt_triangulo, bt_retangulo);
         
-      
+        //adicionando
+        getContentPane().setLayout(new FlowLayout(FlowLayout.LEADING));
+        getContentPane().add(bt_circulo, BorderLayout.SOUTH);
+        getContentPane().add(bt_quadrado, BorderLayout.SOUTH);
+        getContentPane().add(bt_retangulo, BorderLayout.SOUTH);
+        getContentPane().add(bt_triangulo, BorderLayout.SOUTH);
+        
+        //botões funcionando
+        bt_circulo.addActionListener(handler);
+        bt_quadrado.addActionListener(handler);
+        bt_retangulo.addActionListener(handler);
+        bt_triangulo.addActionListener(handler);
         
     }
     
@@ -44,11 +54,8 @@ public class Principal extends JFrame{
         p.setVisible(true);
         p.setTitle("Formas Geometricas");
         p.setDefaultCloseOperation(p.EXIT_ON_CLOSE);
-        p.setSize(500, 400);
+        p.setSize(400, 75);
         
     }
-    
-    
-    
     
 }
