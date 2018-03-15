@@ -25,13 +25,13 @@ public class ButtonHandler implements ActionListener{
     private final JButton bt_quadrado;
     private final JButton bt_triangulo;
     private final JButton bt_retangulo;
+    private final Circulo circ;
     private final Pontos p1;
     private final Pontos p2;
     private final Pontos p3;
     private final Pontos p4;
     private boolean teste;
     private Double Resu;
-    private final Circulo circ;
     private Retangulo ret;
     private Quadrado quad;
     private Triangulo tri;
